@@ -10,8 +10,8 @@ namespace Snake
 	{
 		static void Main(string[] args)
 		{
-			
 
+			Console.SetWindowSize(80,25);//установка размера окна консоли
 			Walls walls = new Walls(80, 25);//отрисовка стен
 			walls.Draw();
 

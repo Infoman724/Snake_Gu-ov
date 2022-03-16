@@ -16,21 +16,21 @@ namespace Snake
 		{
 		}
 
-		public Point(int x, int y, char sym)
+		public Point(int x, int y, char sym)//конструктор по которому работает этот класс
 		{
 			this.x = x;
 			this.y = y;
 			this.sym = sym;
 		}
 
-		public Point(Point p)
+		public Point(Point p)//конструктор точки который запрашивает переменную типа "point"
 		{
 			x = p.x;
 			y = p.y;
 			sym = p.sym;
 		}
 
-		public void Move(int offset, Direction direction)
+		public void Move(int offset, Direction direction)//функция движения
 		{
 			if (direction == Direction.RIGHT)
 			{
