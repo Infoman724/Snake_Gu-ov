@@ -55,19 +55,19 @@ namespace Snake
 			return p.x == this.x && p.y == this.y;
 		}
 
-		public void Draw()
+		public void Draw()//метод отрисовки точек
 		{
 			Console.SetCursorPosition(x, y);
 			Console.Write(sym);
 		}
 
-		public void Clear()
+		public void Clear()//метод отчищения/удаления который рисует пустой символ
 		{
 			sym = ' ';
 			Draw();
 		}
 
-		public override string ToString()
+		public override string ToString()//костыль предназначение которого небыло объявлено но мы не сомневаемся что он "ОЧЕНЬ" важный.наверное)
 		{
 			return x + ", " + y + ", " + sym;
 		}

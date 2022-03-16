@@ -8,11 +8,10 @@ namespace Snake
 {
 	class Snake : Figure //класс "Snake" является наследником класса "figure" так как тоже по сути образует фигуру из точек
 	{
-		Direction direction;//создаем переменную типа "direction"
-
+		Direction direction;//класс хранит данные о направлении куда должна двигаться змейка а заполнятются они вот тут
 		public Snake(Point tail, int length, Direction _direction)//конструктор змейка принимает три аргумента - положения точки хвоста, длинну и направления куда змейка начнёт своё движение
 		{
-			direction = _direction;//приравниваем переменную "direction" к типу direction тут сложновато объяснить
+			direction = _direction;//приравниваем переменную "_direction" к данным direction таким образом мы сможем продолжить ими пользоваться 
 			pList = new List<Point>();//создаём список точек
 			for (int i = 0; i < length; i++)
 			{
@@ -22,11 +21,11 @@ namespace Snake
 			}
 		}
 
-		public void Move()
+		public void Move()//метод движения змейки
 		{
-			Point tail = pList.First();
-			pList.Remove(tail);
-			Point head = GetNextPoint();
+			Point tail = pList.First();//возвращает первую позицию списка точку хвоста 
+			pList.Remove(tail);//точка которая раньше была хвостом уже не является частью змейки поэтому мы должны её удалить
+			Point head = GetNextPoint();//
 			pList.Add(head);
 
 			tail.Clear();
@@ -35,10 +34,10 @@ namespace Snake
 
 		public Point GetNextPoint()
 		{
-			Point head = pList.Last();
-			Point nextPoint = new Point(head);
-			nextPoint.Move(1, direction);
-			return nextPoint;
+			Point head = pList.Last();//получаем позицию точки до перемещения
+			Point nextPoint = new Point(head);//создаём переменую которая является копиеё предыдущей позиции головы
+			nextPoint.Move(1, direction);//и сдвигаем эту самую точку на одну координату по направлению движения
+			return nextPoint;//возвращаем значение новой/следующей точки
 		}
 
 		public bool IsHitTail()
