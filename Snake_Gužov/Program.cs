@@ -17,7 +17,7 @@ namespace Snake
 
 			// Отрисовка точек			
 			Point p = new Point(4, 5, '*');
-			Snake snake = new Snake(p, 4, Direction.RIGHT);//при запуске игры змейка начинает движение вправо из указаной точки
+			Snake snake = new Snake(p, 8, Direction.RIGHT);//при запуске игры змейка начинает движение вправо из указаной точки
 			snake.Draw();
 
 			FoodCreator foodCreator = new FoodCreator(80, 25, '$');//создание объекта еда с условиями длина,ширина карты и символ как еда будет выглядеть

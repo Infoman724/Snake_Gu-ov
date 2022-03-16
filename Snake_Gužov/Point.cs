@@ -30,9 +30,9 @@ namespace Snake
 			sym = p.sym;
 		}
 
-		public void Move(int offset, Direction direction)//функция движения
+		public void Move(int offset, Direction direction)//функция/метод движения
 		{
-			if (direction == Direction.RIGHT)
+			if (direction == Direction.RIGHT)//если направление вправо увеличеиваем кординату х на величину смещения "offset" далее таже логика
 			{
 				x = x + offset;
 			}
