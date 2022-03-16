@@ -66,15 +66,27 @@ namespace Snake
 
 		public bool Eat(Point food)
 		{
+			//int score = 0;
 			Point head = GetNextPoint();
 			if (head.IsHit(food))
 			{
 				food.sym = head.sym;
 				pList.Add(food);
+                /*for (int i = 0; i < length; i++)
+                {
+
+                }*/
 				return true;
 			}
 			else
 				return false;
 		}
+		
+		
+
+
+
+
+
 	}
 }

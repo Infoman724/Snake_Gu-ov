@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-	class Point
+	class Point//класс точка один из самых важных так как отвечает за положения всех символов на экране он приниает аргументы,
 	{
-		public int x;
-		public int y;
-		public char sym;
+		public int x;//положение точки по оси х
+		public int y;//положение точки по оси y
+		public char sym;//и символ который будет отрисован
 
-		public Point()
+		public Point()//конструктор по умолчанию создан как альтернатива для демонстрации
 		{
 		}
 
