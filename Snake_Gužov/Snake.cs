@@ -37,7 +37,7 @@ namespace Snake
 			Point head = pList.Last();//получаем позицию точки до перемещения
 			Point nextPoint = new Point(head);//создаём переменую которая является копиеё предыдущей позиции головы
 			nextPoint.Move(1, direction);//и сдвигаем эту самую точку на одну координату по направлению движения
-			return nextPoint;//возвращаем значение новой/следующей точки
+			return nextPoint;//возвращаем значение новой/следующей точки головы
 		}
 
 		public bool IsHitTail()
@@ -51,7 +51,7 @@ namespace Snake
 			return false;
 		}
 
-		public void HandleKey(ConsoleKey key)
+		public void HandleKey(ConsoleKey key)//метод прежназначеный для управления змейкой суть ясна и объеснена в другом месте
 		{
 			if (key == ConsoleKey.LeftArrow)
 				direction = Direction.LEFT;
