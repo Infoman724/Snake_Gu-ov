@@ -8,11 +8,11 @@ namespace Snake
 {
 	class Figure
 	{
-		protected List<Point> pList;
+		protected List<Point> pList;//создаем список который видно только наследникам класса
 
-		public void Draw()
+		public void Draw()//метод/функция отрисовки точек
 		{
-			foreach (Point p in pList)
+			foreach (Point p in pList)//за каждую переменую "p" типа Point в списке рисуем её
 			{
 				p.Draw();
 			}

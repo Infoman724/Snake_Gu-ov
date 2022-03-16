@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-	class Snake : Figure
+	class Snake : Figure //класс "Snake" является наследником класса "figure" так как тоже по сути образует фигуру из точек
 	{
-		Direction direction;
+		Direction direction;//создаем переменную типа "direction"
 
-		public Snake(Point tail, int length, Direction _direction)
+		public Snake(Point tail, int length, Direction _direction)//конструктор змейка принимает три аргумента - положения точки хвоста, длинну и направления куда змейка начнёт своё движение
 		{
-			direction = _direction;
-			pList = new List<Point>();
+			direction = _direction;//приравниваем переменную "direction" к типу direction тут сложновато объяснить
+			pList = new List<Point>();//создаём список точек
 			for (int i = 0; i < length; i++)
 			{
-				Point p = new Point(tail);
-				p.Move(i, direction);
-				pList.Add(p);
+				Point p = new Point(tail);//создаём копию точки хвоста
+				p.Move(i, direction);//смещаем точку на "i" по указаному направлению в нашем случае вправо 
+				pList.Add(p);//и добовляем в наш список точек точку "p"
 			}
 		}
 
