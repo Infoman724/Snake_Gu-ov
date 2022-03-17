@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-	class Snake : Figure //класс "Snake" является наследником класса "figure" так как тоже по сути образует фигуру из точек
+	public class Snake : Figure //класс "Snake" является наследником класса "figure" так как тоже по сути образует фигуру из точек
 	{
+		public int score = 1;
 		Direction direction;//класс хранит данные о направлении куда должна двигаться змейка а заполнятются они вот тут
-		public Snake(Point tail, int length, Direction _direction)//конструктор змейка принимает три аргумента - положения точки хвоста, длинну и направления куда змейка начнёт своё движение
+        
+
+        public Snake(Point tail, int length, Direction _direction)//конструктор змейка принимает три аргумента - положения точки хвоста, длинну и направления куда змейка начнёт своё движение
 		{
 			direction = _direction;//приравниваем переменную "_direction" к данным direction таким образом мы сможем продолжить ими пользоваться 
 			pList = new List<Point>();//создаём список точек
@@ -78,7 +81,7 @@ namespace Snake
 		}
 		public int Points(Point food)
         {
-			int score = 1;
+			
 			Point head = GetNextPoint();
 			if (head.IsHit(food))
             {
@@ -86,7 +89,7 @@ namespace Snake
                 {
 
                 }
-				Console.WriteLine(score);
+				
             }
 			return score;
 		}

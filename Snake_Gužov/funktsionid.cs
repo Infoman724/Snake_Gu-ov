@@ -19,7 +19,7 @@ namespace Snake_Gužov
 			WriteText("Creator:Vlademir Gužov", xOffset + 4, yOffset++);
 			WriteText("Special for my education purposes", xOffset - 1, yOffset++);
 			WriteText("============================", xOffset, yOffset++);
-
+			
 		}
 		public static void WriteText(String text, int xOffset, int yOffset)
 		{

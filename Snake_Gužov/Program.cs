@@ -34,7 +34,7 @@ namespace Snake
 				{
 					food = foodCreator.CreateFood();//создания объекта "еда"
 					food.Draw();//отрисовка
-					
+					snake.Points(food);
 				}
 				else
 				{
