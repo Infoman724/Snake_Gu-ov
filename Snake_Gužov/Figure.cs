@@ -18,24 +18,24 @@ namespace Snake
 			}
 		}
 
-		internal bool IsHit(Figure figure)
+		internal bool IsHit(Figure figure)//передаём в качестве аргумента переменную "figure" типа "Figure"
 		{
-			foreach (var p in pList)
+			foreach (var p in pList)//за каждую переменую типа точка в списке "pList"
 			{
-				if (figure.IsHit(p))
+				if (figure.IsHit(p))//если фигура касается(их координаты совпадают) с точкой из списка возвращается "true"
 					return true;
 			}
-			return false;
+			return false;//по иному возращаем "false"
 		}
 
-		private bool IsHit(Point point)
+		private bool IsHit(Point point)//метод для сравнения пересечения кординат точек
 		{
-			foreach (var p in pList)
+			foreach (var p in pList)//за каждую переменую типа точка в списке точек "pList"
 			{
-				if (p.IsHit(point))
+				if (p.IsHit(point))//если точка касается точки возвращается "true"
 					return true;
 			}
-			return false;
+			return false;// по иному возрвращаем "false" 
 		}
 	}
 }

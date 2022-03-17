@@ -5,8 +5,8 @@ using System.Linq;
 
 namespace Snake_Gužov
 {
-    public class funktsionid
-    {
+	public class funktsionid//класс содержащий ввсего два метода вывода на экран текста
+	{
 		public static void WriteGameOver()
 		{
 			int xOffset = 25;
@@ -14,19 +14,19 @@ namespace Snake_Gužov
 			Console.ForegroundColor = ConsoleColor.Red;
 			Console.SetCursorPosition(xOffset, yOffset++);
 			WriteText("============================", xOffset, yOffset++);
-			WriteText("GameOver!", xOffset + 1, yOffset++);
-			yOffset++;
-			WriteText("Creator:Vlademir Gužov", xOffset + 2, yOffset++);
-			WriteText("Special for my education purposes", xOffset + 1, yOffset++);
+			WriteText("GameOver!", xOffset + 10, yOffset++);
+			yOffset++; WriteText($"your score is ", xOffset + 8, yOffset++);
+			WriteText("Creator:Vlademir Gužov", xOffset + 4, yOffset++);
+			WriteText("Special for my education purposes", xOffset - 1, yOffset++);
 			WriteText("============================", xOffset, yOffset++);
+
 		}
 		public static void WriteText(String text, int xOffset, int yOffset)
 		{
 			Console.SetCursorPosition(xOffset, yOffset);
 			Console.WriteLine(text);
 		}
-
-
+		
 
 
 

@@ -40,15 +40,15 @@ namespace Snake
 			return nextPoint;//возвращаем значение новой/следующей точки головы
 		}
 
-		public bool IsHitTail()
+		public bool IsHitTail()//
 		{
-			var head = pList.Last();
-			for (int i = 0; i < pList.Count - 2; i++)
+			var head = pList.Last();//получаем координаты головной точки
+			for (int i = 0; i < pList.Count - 2; i++)//проверяем есть ли совпадения координат головной  точки с координатами всего оставшегося хвоста
 			{
-				if (head.IsHit(pList[i]))
+				if (head.IsHit(pList[i]))//и если мы касаемся то возвращается "true"
 					return true;
 			}
-			return false;
+			return false;//else false
 		}
 
 		public void HandleKey(ConsoleKey key)//метод прежназначеный для управления змейкой суть ясна и объеснена в другом месте
@@ -63,24 +63,33 @@ namespace Snake
 				direction = Direction.UP;
 		}
 
-		public bool Eat(Point food)
+		public bool Eat(Point food)//метод чтобы змейка могла взаимодействовать с едой(кушать)
 		{
-			//int score = 0;
-			Point head = GetNextPoint();
-			if (head.IsHit(food))
+			
+			Point head = GetNextPoint();//получуаем точку соответствущемы следующему положению головы змейки
+			if (head.IsHit(food))//если змейка касается еды(кординате головы и еды совпали) выполняется цикл
 			{
-				food.sym = head.sym;
-				pList.Add(food);
-                /*for (int i = 0; i < length; i++)
-                {
-
-                }*/
-				return true;
+				food.sym = head.sym;//еда становится символом головы
+				pList.Add(food);//еда добовляется в список точек
+				return true;//и в таком случае/условиях возращяется "true"
 			}
 			else
-				return false;
+				return false;//по иному "false"
 		}
-		
+		public int Points(Point food)
+        {
+			int score = 1;
+			Point head = GetNextPoint();
+			if (head.IsHit(food))
+            {
+                for (int i = 0; i < score; score++)
+                {
+
+                }
+				Console.WriteLine(score);
+            }
+			return score;
+		}
 		
 
 

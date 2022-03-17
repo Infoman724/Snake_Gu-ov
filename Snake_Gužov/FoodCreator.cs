@@ -16,9 +16,9 @@ namespace Snake
 
 		public FoodCreator(int mapWidth, int mapHeight, char sym)//консруктор по кторому работает наш "генератор еды" в нём указаны
 		{
-			this.mapWidht = mapWidth;//конкретно эта ширина 
-			this.mapHeight = mapHeight;//конкретно эта длинна 
-			this.sym = sym;//конкретно этот символ
+			this.mapWidht = mapWidth;//обращение к полям класса а не к данным как аргмуент значениям
+			this.mapHeight = mapHeight;// обращение к полям класса а не к данным как аргмуент значениям
+			this.sym = sym;//обращение к полям класса а не к данным как аргмуент значениям
 		}
 
 		public Point CreateFood()//метод создания "еды" не замысловатыми действиями спавним(отрисовываем) еду в случайной точке по оси х и y с указаным символом 

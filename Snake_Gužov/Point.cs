@@ -50,9 +50,9 @@ namespace Snake
 			}
 		}
 
-		public bool IsHit(Point p)
+		public bool IsHit(Point p)//метод для проверки столкновения разных точек
 		{
-			return p.x == this.x && p.y == this.y;
+			return p.x == this.x && p.y == this.y;//здесь мы сравниваем совпадений кординат текущей точки с координатами точки переданной в качестве аргумента
 		}
 
 		public void Draw()//метод отрисовки точек
@@ -67,7 +67,7 @@ namespace Snake
 			Draw();
 		}
 
-		public override string ToString()//костыль предназначение которого небыло объявлено но мы не сомневаемся что он "ОЧЕНЬ" важный.наверное)
+		public override string ToString()//костыль предназначение которого небыло объявлено но мы не сомневаемся что он "ОЧЕНЬ" важный.наверное :)
 		{
 			return x + ", " + y + ", " + sym;
 		}
