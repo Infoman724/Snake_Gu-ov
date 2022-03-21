@@ -46,6 +46,8 @@ namespace Snake
 					sound.PlayEat();
 					food = foodCreator.CreateFood();//создания объекта "еда"
 					food.Draw();//отрисовка
+					food = foodCreator.CreateFood();//создания объекта "еда"
+					food.Draw();//отрисовка
 					score++;
 				}
 				else
@@ -59,6 +61,7 @@ namespace Snake
 					ConsoleKeyInfo key = Console.ReadKey();//здесь мы считываем нажатую клавишу для управления змейкой
 					snake.HandleKey(key.Key);//здесь мы считаные данные применяем
 				}
+                
 			}
 			Snake_Gužov.funktsionid.nedogameover(score, name);
 			//Snake_Gužov.funktsionid.WriteGameOver();//этот кусочек кода отвечает за вывод "ненавистной" надписи GameOver!
