@@ -79,7 +79,7 @@ namespace Snake
 			else
 				return false;//по иному "false"
 		}
-		public int Points(Point food)
+		public int Points(Point food)//метод для подчёта очков
         {
 			
 			Point head = GetNextPoint();
