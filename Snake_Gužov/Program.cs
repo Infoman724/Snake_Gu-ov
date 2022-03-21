@@ -10,8 +10,10 @@ namespace Snake
 	{
 		static void Main(string[] args)
 		{
-
-			Console.SetWindowSize(80,25);//установка размера окна консоли
+			int score = 0;
+			Console.WriteLine("Enter your name please--> ");
+			string name = Console.ReadLine();			
+			Console.SetWindowSize(90,35);//установка размера окна консоли
 			Walls walls = new Walls(80, 25);//отрисовка стен
 			walls.Draw();
 
@@ -35,7 +37,7 @@ namespace Snake
 				{
 					food = foodCreator.CreateFood();//создания объекта "еда"
 					food.Draw();//отрисовка
-					snake.Points(food);
+					score++;
 				}
 				else
 				{
@@ -49,14 +51,35 @@ namespace Snake
 					snake.HandleKey(key.Key);//здесь мы считаные данные применяем
 				}
 			}
-            Snake.WriteGameOver();//этот кусочек кода отвечает за вывод "ненавистной" надписи GameOver!
+			nedogameover(score, name);
+			//Snake_Gužov.funktsionid.WriteGameOver();//этот кусочек кода отвечает за вывод "ненавистной" надписи GameOver!
 			Console.ReadLine();//этот костыль для того чтобы программа не закрывалась сразу после окончания работы
+			static void nedogameover(int score, string name)
+			{
+				int xOffset = 25;
+				int yOffset = 8;
+				Console.ForegroundColor = ConsoleColor.Red;
+				Console.SetCursorPosition(xOffset, yOffset++);
+				WriteText("============================", xOffset, yOffset++);
+				WriteText("GameOver!", xOffset + 10, yOffset++);
+				yOffset++; WriteText($"{name}, {score}", xOffset + 8, yOffset++);
+				WriteText("Creator:Vlademir Gužov", xOffset + 4, yOffset++);
+				WriteText("Special for my education purposes", xOffset - 1, yOffset++);
+				WriteText("============================", xOffset, yOffset++);
+				
+			}
+			
+		}
+		public static void WriteText(String text, int xOffset, int yOffset)
+		{
+			Console.SetCursorPosition(xOffset, yOffset);
+			Console.WriteLine(text);
 		}
 
 
-		
 
-		
+
+
 
 	}
 }

@@ -11,16 +11,16 @@ namespace Snake
 
 
 
-		int score = 1;
+		//
 		Direction direction;//класс хранит данные о направлении куда должна двигаться змейка а заполнятются они вот тут
-		public int Score
-		{
-			set
-			{
-				this.score = value;
-			}
-			get { return score; }
-		}
+		//public int Score
+		//{
+		//	set
+		//	{
+		//		this.score = value;
+		//	}
+		//	get { return score; }
+		//}
 
 		public Snake(Point tail, int length, Direction _direction)//конструктор змейка принимает три аргумента - положения точки хвоста, длинну и направления куда змейка начнёт своё движение
 		{
@@ -82,6 +82,7 @@ namespace Snake
 			Point head = GetNextPoint();//получуаем точку соответствущемы следующему положению головы змейки
 			if (head.IsHit(food))//если змейка касается еды(кординате головы и еды совпали) выполняется цикл
 			{
+				
 				food.sym = head.sym;//еда становится символом головы
 				pList.Add(food);//еда добовляется в список точек
 				return true;//и в таком случае/условиях возращяется "true"
@@ -89,39 +90,22 @@ namespace Snake
 			else
 				return false;//по иному "false"
 		}
-		public int Points(Point food)//метод для подчёта очков
-        {
+		
+		//public int Points(Point food)//метод для подчёта очков
+  //      {
 			
-			Point head = GetNextPoint();
-			if (head.IsHit(food))
-            {
-                for (int i = 0; i < score; score++)
-                {
+		//	Point head = GetNextPoint();
+		//	if (head.IsHit(food))
+  //          {
+  //              for (int i = 0; i < score; score++)
+  //              {
 
-                }
+  //              }
 				
-            }
-			return score;
-		}
-		public static void WriteText(String text, int xOffset, int yOffset)
-		{
-			Console.SetCursorPosition(xOffset, yOffset);
-			Console.WriteLine(text);
-		}
-		public static void WriteGameOver()
-		{
-			int xOffset = 25;
-			int yOffset = 8;
-			Console.ForegroundColor = ConsoleColor.Red;
-			Console.SetCursorPosition(xOffset, yOffset++);
-			WriteText("============================", xOffset, yOffset++);
-			WriteText("GameOver!", xOffset + 10, yOffset++);
-            yOffset++; WriteText($"your score is", xOffset + 8, yOffset++);
-			WriteText("Creator:Vlademir Gužov", xOffset + 4, yOffset++);
-			WriteText("Special for my education purposes", xOffset - 1, yOffset++);
-			WriteText("============================", xOffset, yOffset++);
-
-		}
+  //          }
+		//	return score;
+		//}
+		
 
 
 
