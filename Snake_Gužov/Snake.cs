@@ -11,16 +11,9 @@ namespace Snake
 
 
 
-		//
+		
 		Direction direction;//класс хранит данные о направлении куда должна двигаться змейка а заполнятются они вот тут
-		//public int Score
-		//{
-		//	set
-		//	{
-		//		this.score = value;
-		//	}
-		//	get { return score; }
-		//}
+		
 
 		public Snake(Point tail, int length, Direction _direction)//конструктор змейка принимает три аргумента - положения точки хвоста, длинну и направления куда змейка начнёт своё движение
 		{
@@ -91,20 +84,7 @@ namespace Snake
 				return false;//по иному "false"
 		}
 		
-		//public int Points(Point food)//метод для подчёта очков
-  //      {
-			
-		//	Point head = GetNextPoint();
-		//	if (head.IsHit(food))
-  //          {
-  //              for (int i = 0; i < score; score++)
-  //              {
-
-  //              }
-				
-  //          }
-		//	return score;
-		//}
+		
 		
 
 

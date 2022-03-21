@@ -11,16 +11,18 @@ namespace Snake
 		public int x;//положение точки по оси х
 		public int y;//положение точки по оси y
 		public char sym;//и символ который будет отрисован
+		public ConsoleColor color;//возможность выбрать цвет точки
 
 		public Point()//конструктор по умолчанию создан как альтернатива для демонстрации
 		{
 		}
 
-		public Point(int x, int y, char sym)//конструктор по которому работает этот класс
+		public Point(int x, int y, char sym, ConsoleColor color)//конструктор по которому работает этот класс
 		{
 			this.x = x;
 			this.y = y;
 			this.sym = sym;
+			this.color = color;
 		}
 
 		public Point(Point p)//конструктор точки который запрашивает переменную типа "point"
@@ -28,6 +30,7 @@ namespace Snake
 			x = p.x;
 			y = p.y;
 			sym = p.sym;
+			color = p.color;
 		}
 
 		public void Move(int offset, Direction direction)//функция/метод движения

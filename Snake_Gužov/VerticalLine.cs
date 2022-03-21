@@ -13,7 +13,7 @@ namespace Snake
 			pList = new List<Point>();//создаём по класике новый список точек
 			for (int y = yUp; y <= yDown; y++)//и за каждый "у"  меньше нижнего прибавляем один
 			{
-				Point p = new Point(x, y, sym);//создаёем переменную "p" типа "point" на каждом витке цикла
+				Point p = new Point(x, y, sym, ConsoleColor.Red);//создаёем переменную "p" типа "point" на каждом витке цикла
 				pList.Add(p);//и добовляем ее в список на каждом витке цикла
 			}
 		}

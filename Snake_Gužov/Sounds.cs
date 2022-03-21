@@ -1,11 +1,13 @@
-﻿using System;
+﻿using Snake;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using WMPLib;
 
 namespace Snake_Gužov
+    
 {
-    public class Sounds
+    public class Sounds 
     {
         WindowsMediaPlayer player = new WindowsMediaPlayer();
         private string pathToMedia;
