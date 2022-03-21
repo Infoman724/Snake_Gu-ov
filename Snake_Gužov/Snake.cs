@@ -8,11 +8,21 @@ namespace Snake
 {
 	public class Snake : Figure //класс "Snake" является наследником класса "figure" так как тоже по сути образует фигуру из точек
 	{
-		public int score = 1;
-		Direction direction;//класс хранит данные о направлении куда должна двигаться змейка а заполнятются они вот тут
-        
 
-        public Snake(Point tail, int length, Direction _direction)//конструктор змейка принимает три аргумента - положения точки хвоста, длинну и направления куда змейка начнёт своё движение
+
+
+		int score = 1;
+		Direction direction;//класс хранит данные о направлении куда должна двигаться змейка а заполнятются они вот тут
+		public int Score
+		{
+			set
+			{
+				this.score = value;
+			}
+			get { return score; }
+		}
+
+		public Snake(Point tail, int length, Direction _direction)//конструктор змейка принимает три аргумента - положения точки хвоста, длинну и направления куда змейка начнёт своё движение
 		{
 			direction = _direction;//приравниваем переменную "_direction" к данным direction таким образом мы сможем продолжить ими пользоваться 
 			pList = new List<Point>();//создаём список точек
@@ -93,8 +103,25 @@ namespace Snake
             }
 			return score;
 		}
-		
+		public static void WriteText(String text, int xOffset, int yOffset)
+		{
+			Console.SetCursorPosition(xOffset, yOffset);
+			Console.WriteLine(text);
+		}
+		public static void WriteGameOver()
+		{
+			int xOffset = 25;
+			int yOffset = 8;
+			Console.ForegroundColor = ConsoleColor.Red;
+			Console.SetCursorPosition(xOffset, yOffset++);
+			WriteText("============================", xOffset, yOffset++);
+			WriteText("GameOver!", xOffset + 10, yOffset++);
+            yOffset++; WriteText($"your score is", xOffset + 8, yOffset++);
+			WriteText("Creator:Vlademir Gužov", xOffset + 4, yOffset++);
+			WriteText("Special for my education purposes", xOffset - 1, yOffset++);
+			WriteText("============================", xOffset, yOffset++);
 
+		}
 
 
 

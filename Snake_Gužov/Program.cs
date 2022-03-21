@@ -23,6 +23,7 @@ namespace Snake
 			FoodCreator foodCreator = new FoodCreator(80, 25, '$');//создание объекта еда с условиями длина,ширина карты и символ как еда будет выглядеть
 			Point food = foodCreator.CreateFood();//наш объект
 			food.Draw();//отрисовка еды 
+			
 
 			while (true)
 			{
@@ -48,7 +49,7 @@ namespace Snake
 					snake.HandleKey(key.Key);//здесь мы считаные данные применяем
 				}
 			}
-            Snake_Gužov.funktsionid.WriteGameOver();//этот кусочек кода отвечает за вывод "ненавистной" надписи GameOver!
+            Snake.WriteGameOver();//этот кусочек кода отвечает за вывод "ненавистной" надписи GameOver!
 			Console.ReadLine();//этот костыль для того чтобы программа не закрывалась сразу после окончания работы
 		}
 
