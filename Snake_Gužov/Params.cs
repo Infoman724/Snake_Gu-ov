@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Snake_Gužov
 {
-    class Params
+   public class Params
     {
         private string resourcesFoler;
 

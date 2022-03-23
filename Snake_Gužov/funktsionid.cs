@@ -12,16 +12,20 @@ namespace Snake_Gužov
 		
 			public static void nedogameover(int score, string name)
 		    {
+				Params settings = new Params();
+				Sounds gameoverr = new Sounds(settings.GetResourceFolder());
+				gameoverr.Play("gameover.mp3");
 				int xOffset = 25;
 				int yOffset = 8;
 				Console.ForegroundColor = ConsoleColor.Red;
 				Console.SetCursorPosition(xOffset, yOffset++);
 				WriteText("============================", xOffset, yOffset++);
 				WriteText("GameOver!", xOffset + 10, yOffset++);
-				yOffset++; WriteText($"{name}, {score}", xOffset + 8, yOffset++);
+				yOffset++; WriteText($"{name} your score is-->{score}", xOffset + 8, yOffset++);
 				WriteText("Creator:Vlademir Gužov", xOffset + 4, yOffset++);
 				WriteText("Special for my education purposes", xOffset - 1, yOffset++);
 				WriteText("============================", xOffset, yOffset++);
+				
 
 		    }
 		public static void WriteText(String text, int xOffset, int yOffset)
