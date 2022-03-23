@@ -12,9 +12,8 @@ namespace Snake_Gužov
 		
 			public static void nedogameover(int score, string name)
 		    {
-				Params settings = new Params();
-				Sounds gameoverr = new Sounds(settings.GetResourceFolder());
-				gameoverr.Play("gameover.mp3");
+				
+				
 				int xOffset = 25;
 				int yOffset = 8;
 				Console.ForegroundColor = ConsoleColor.Red;

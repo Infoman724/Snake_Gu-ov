@@ -27,7 +27,7 @@ namespace Snake_Gužov
 
         public void Play(string songName)
         {
-            player.URL = pathToMedia + songName + "gameover.mp3";
+            player.URL = pathToMedia + songName;
             player.controls.play();
         }
     

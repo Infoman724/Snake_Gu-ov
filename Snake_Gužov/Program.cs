@@ -32,9 +32,10 @@ namespace Snake
 			Point food = foodCreator.CreateFood();//наш объект
 			food.Draw();//отрисовка еды 
 			Params settings = new Params();
-			Sounds sound = new Sounds(settings.GetResourceFolder());
-			Sounds kus = new Sounds(settings.GetResourceFolder());
-			//sound.Play();
+			Sounds sound = new Sounds(settings.GetResourceFolder());//обьект звук класса звуки
+			Sounds kus = new Sounds(settings.GetResourceFolder());//обьект кусь класса звуки
+			sound.Play();
+			Sounds gameoverr = new Sounds(settings.GetResourceFolder());
 			
 
 			while (true)
@@ -42,7 +43,7 @@ namespace Snake
 
 				if (walls.IsHit(snake) || snake.IsHitTail())//если змея врезается в стенку или хвост то программа прерывается
 				{
-
+					gameoverr.Play("gameover.mp3");
 					break;
 				}
 				if (snake.Eat(food))//если змейка косается "еды" то создается еще одна "еда" и добовляется одно очко и проигрывается звук "поедания"
@@ -71,7 +72,7 @@ namespace Snake
 			}
 			
 			
-			Snake_Gužov.funktsionid.nedogameover(score, name);
+			Snake_Gužov.funktsionid.nedogameover(score, name);//запись результатов в файл "Vast.txt"
 			if (score >= 2)
 			{
 				StreamWriter to_file = new StreamWriter(@"..\..\..\..\Vast.txt", true);

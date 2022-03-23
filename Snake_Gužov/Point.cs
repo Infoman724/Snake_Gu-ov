@@ -61,6 +61,7 @@ namespace Snake
 		public void Draw()//метод отрисовки точек
 		{
 			Console.SetCursorPosition(x, y);
+			Console.ForegroundColor = color;
 			Console.Write(sym);
 		}
 
