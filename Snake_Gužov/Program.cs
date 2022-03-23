@@ -66,16 +66,18 @@ namespace Snake
 					ConsoleKeyInfo key = Console.ReadKey();//здесь мы считываем нажатую клавишу для управления змейкой
 					snake.HandleKey(key.Key);//здесь мы считаные данные применяем
 				}
-				if (score >= 1)
-				{
-					StreamWriter to_file = new StreamWriter(@"..\..\Vast.txt", true);
-					to_file.WriteLine(name + " - " + score);
-					to_file.Close();
-				}
+				
+				
 			}
 			
 			
 			Snake_Gužov.funktsionid.nedogameover(score, name);
+			if (score >= 2)
+			{
+				StreamWriter to_file = new StreamWriter(@"..\..\..\..\Vast.txt", true);
+				to_file.WriteLine(name + " - " + score);
+				to_file.Close();
+			}
 			//Snake_Gužov.funktsionid.WriteGameOver();//этот кусочек кода отвечает за вывод "ненавистной" надписи GameOver!
 			Console.ReadLine();//этот костыль для того чтобы программа не закрывалась сразу после окончания работы
 							   
