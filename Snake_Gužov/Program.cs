@@ -17,6 +17,7 @@ namespace Snake
 			string vast =Console.ReadLine();
 			int score = 0;
 			int speed = 100;
+            
             if (vast=="play")
             {
 				Console.WriteLine("Enter your name please it should be at least 3 letters long--> ");
@@ -107,8 +108,11 @@ namespace Snake
             }
             if (vast=="leaders")
             {
-
-            }
+				StreamReader from_file= new StreamReader(@"..\..\..\..\Vast.txt", true);
+				string text = from_file.ReadToEnd();
+				Console.WriteLine(text);
+				from_file.Close();
+			}
 							   
 
 
